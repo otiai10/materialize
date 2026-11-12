@@ -9,10 +9,11 @@ module.exports = function(grunt) {
 
 //  Sass
     sass: {                              // Task
+      options: { implementation: require('sass') },
       expanded: {                            // Target
         options: {                       // Target options
-          outputStyle: 'expanded',
-          sourcemap: false,
+          style: 'expanded',
+          sourceMap: false,
         },
         files: {
           'dist/css/materialize.css': 'sass/materialize.scss',
@@ -21,8 +22,8 @@ module.exports = function(grunt) {
 
       min: {
         options: {
-          outputStyle: 'compressed',
-          sourcemap: false
+          style: 'compressed',
+          sourceMap: false
         },
         files: {
           'dist/css/materialize.min.css': 'sass/materialize.scss',
@@ -33,7 +34,7 @@ module.exports = function(grunt) {
       gh: {
         options: {
           style: 'compressed',
-          sourcemap: false
+          sourceMap: false
         },
         files: {
           'css/ghpages-materialize.css': 'sass/ghpages-materialize.scss',
@@ -44,7 +45,7 @@ module.exports = function(grunt) {
       bin: {
         options: {
           style: 'expanded',
-          sourcemap: false
+          sourceMap: false
         },
         files: {
           'bin/materialize.css': 'sass/materialize.scss',
